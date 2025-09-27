@@ -1,0 +1,217 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.error-msg {
+  color: red;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  height: 14px;
+}
+
+.error-input {
+  border-color: red;
+}
+
+.show-password {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.show-password input {
+  margin-right: 8px;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #000;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: #fff;
+  border-bottom: 2px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.home-img {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+/* LOGIN CONTAINER */
+.login-container {
+  display: flex;
+  min-height: calc(100vh - 70px);
+}
+
+/* FORMULARIO */
+.login-box {
+  flex: 0 0 350px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  margin-left: auto;
+  margin-right: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.password-box {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.eye-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #333;
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  height: 14px; /* para no cambiar layout aunque no haya error */
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.remember input {
+  margin-right: 8px;
+}
+
+.login-btn {
+  padding: 10px 18px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
+/* IMAGEN DERECHA */
+.login-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 70px);
+    position: relative;
+  }
+
+  .login-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/login.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+  }
+
+  .login-box {
+    width: 90%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px 20px;
+    border-radius: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  form {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .login-image {
+    display: none;
+  }
+}
