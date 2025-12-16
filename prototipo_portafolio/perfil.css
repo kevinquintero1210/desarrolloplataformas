@@ -1,0 +1,782 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root {
+  --primary-color: #a855f7;
+  --primary-color-dark: #9333ea;
+  --secondary-color: #ca8a04;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --extra-light: #faf5ff;
+  --max-width: 1200px;
+  --card-bg: #1e1e1e;
+  --transition: all 0.3s ease;
+  --dark-bg: #121212;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--primary-color) var(--extra-light);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* NAV */
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 99;
+}
+
+.nav__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+nav .logo a:hover {
+  color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+  display: none;
+  cursor: pointer;
+}
+
+nav input[type="checkbox"] {
+  display: none;
+}
+
+nav .checkbox i {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  transition: left 0.3s;
+}
+
+ul li a {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+ul li a:hover,
+ul li a.active {
+  border-bottom: 0.5rem solid #9333ea;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* SECCIONES */
+.section {
+  background-color: var(--extra-light);
+}
+
+.section__container {
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  color: var(--text-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.title span {
+  font-weight: 600;
+}
+
+.description {
+  line-height: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.content-list {
+  margin: 1.5rem 0;
+}
+
+.list-item {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--primary-color);
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* BOTONES Y REDES */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.action__btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.action__btns button {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hire__me {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.hire__me:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.portfolio {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.portfolio:hover {
+  background-color: var(--primary-color-dark);
+  color: #fff;
+}
+
+/* IMAGEN DE PERFIL */
+.image {
+  display: grid;
+  place-items: center;
+}
+
+.image img {
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.image img:hover {
+  transform: scale(1.05);
+}
+
+/* ICONOS SOCIALES */
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.4rem;
+  margin: 3rem 0.5rem 3rem 0;
+  border: 0.2rem solid #9333ea;
+  border-radius: 50%;
+  color: #9333ea;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: black;
+  background-color: #9333ea;
+  transform: scale(1.3) translateY(-5px);
+  box-shadow: 0 0 25px #9333ea;
+}
+
+/* FOOTER */
+.footer {
+  background-color: var(--text-dark);
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.footer__container {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer__name {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-icons a {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  border: 0.1rem solid var(--primary-color);
+  font-size: 1.4rem;
+  transition: 0.3s;
+}
+
+.footer-icons a:hover {
+  background-color: var(--primary-color);
+  color: #000;
+  transform: scale(1.2);
+}
+
+.footer__text {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.footer__info {
+  text-align: center;
+}
+
+.footer__info p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+  color: #d1d5db;
+}
+
+.footer__rights {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-top: 1rem;
+}
+
+/* CENTRADO PARA SECCIONES (QUITÉ #projects DE AQUÍ) */
+#skills .section__container,
+#education .section__container,
+#experience .section__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#skills .content, #education .content, #experience .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+#skills .subtitle, #education .subtitle, #experience .subtitle,
+#skills .title, #education .title, #experience .title,
+#skills .description, #education .description, #experience .description {
+  text-align: center;
+  width: 100%;
+}
+
+#skills .content-list, #education .content-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 1.5rem auto;
+}
+
+#skills .list-item, #education .list-item {
+  text-align: center;
+  width: 100%;
+  padding-left: 0;
+  border-left: none;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+}
+
+/* EXPERIENCIA - LINEA DE TIEMPO, PUNTOS SOBRE LA LINEA Y HERRAMIENTAS */
+.experience-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto 0;
+  padding-left: 2rem;
+}
+
+.experience-container::before {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--primary-color);
+}
+
+.experience-container::before {
+  display: none !important;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 2px;
+  height: 100%;
+  background-color: var(--primary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 50px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  z-index: 1;
+}
+
+.experience-item {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 3.5rem;
+}
+
+.experience-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* EXPERIENCE header y techs (sin cambios funcionales) */
+.experience-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.experience-header .experience-year {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.experience-tech-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.experience-tech-container .tech-item {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-tech-container .tech-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* contenido grid general (se utilizaba también para proyectos en mobile) */
+.content-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* ====== PROYECTOS: MISMO DISEÑO DE MÓVIL PERO EN 3 COLUMNAS EN DESKTOP ====== */
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0px 30px rgba(108,99,255, .5);
+}
+
+.project-img {
+  overflow: hidden;
+}
+
+.project-img img {
+  transition: var(--transition);
+  width: 100%;
+}
+
+.project-card:hover .project-img img {
+  transform: scale(1.05);
+}
+
+.project-info{
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-info h3 {
+  display: flex;
+  color: whitesmoke;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.project-info p {
+  display: flex;
+  color: var(--extra-light);
+  margin-bottom: 1rem;
+  font-size: .95rem;
+  flex-grow: 1;
+  text-align: left;
+  line-height: 1.2;
+}
+
+/* project badges & links */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-tech span{
+  font-size: 0.8rem;
+  padding: .2rem .6rem;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links a {
+  font-size: 0.9rem;
+  color: var(--extra-light);
+  transition: var(--transition);
+}
+
+.project-links a:hover {
+  color: var(--primary-color);
+}
+
+/* ====== PROYECTOS: MISMO DISEÑO DE MÓVIL PERO EN 3 COLUMNAS EN DESKTOP ====== */
+@media (min-width: 992px) {
+
+  /* Contenedor: 3 columnas (más anchas gracias al minmax 340px) */
+  #projects .content-list {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(340px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    grid-auto-rows: 1fr; /* asegura filas de igual altura */
+  }
+
+  /* Cada tarjeta rellena la celda para igualar alturas */
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;     /* rellena la altura del grid row */
+    overflow: hidden;
+  }
+
+  /* Imagen mantiene proporción y no empuja la tarjeta */
+  .project-img {
+    flex: 0 0 auto;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .project-img img {
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+  }
+
+  /* Info ocupa el espacio restante dentro de la tarjeta y texto alineado a la izquierda */
+  .project-info {
+    flex: 1 1 auto; /* crece para llenar la tarjeta y así las alturas se igualan */
+    text-align: left;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .project-info h3 {
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Forzar máximo 2 líneas en la descripción */
+  .project-info p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+  }
+}
+
+/* RESPONSIVE GENERAL */
+@media (max-width: 768px) {
+  nav .checkbox {
+    display: block;
+  }
+
+  ul {
+    position: absolute;
+    top: 65px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 65px);
+    flex-direction: column;
+    background-color: var(--extra-light);
+    gap: 2rem;
+    padding: 2rem 0;
+    transition: left 0.3s ease;
+  }
+
+  nav input[type="checkbox"]:checked ~ ul {
+    left: 0;
+  }
+
+  ul li a {
+    font-size: 1.3rem;
+    padding: 0.5rem 0;
+  }
+
+  .section__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 8rem 1rem 3rem;
+    gap: 2rem;
+  }
+
+  .section .content {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .image {
+    order: -1;
+    margin-bottom: 2rem;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .image img {
+    width: 18rem;
+    height: 18rem;
+    object-fit: cover;
+  }
+
+  .action__btns {
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  .footer-icons {
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  /* EXPERIENCIA - RESPONSIVE */
+  .experience-container {
+    padding-left: 1.5rem;
+  }
+
+  .experience-container::before {
+    left: 0.75rem;
+  }
+
+  .experience-item {
+    margin-left: 2.5rem;
+    padding: 1.5rem;
+  }
+
+  /* antes: .experience-item::before se ajustaba; ahora ajustamos el span (.experience-dot) */
+  .experience-item::before {
+    left: -1.25rem;
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  /* ajuste responsive del punto para quedar sobre la línea en mobile */
+  .experience-dot {
+    left: calc(-2.5rem + 0.75rem); /* coincide con la línea en mobile */
+    width: 0.9rem;
+    height: 0.9rem;
+    top: 0.35rem;
+  }
+
+  .experience-tech-container {
+    justify-content: center;
+  }
+
+  /* PROYECTOS MOBILE → exactamente como antes */
+  #projects .content-list {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .project-info h3,
+  .project-info p {
+    text-align: left;
+  }
+}
+
+/* ================= REGLAS ESPECÍFICAS PARA #PROJECTS (CENTRADO SIN ALTERAR DISEÑO) ================ */
+/* Estas reglas permiten que el grid de proyectos tenga el ancho/centro esperado
+   sin tocar el resto de secciones ni su comportamiento flex. */
+
+#projects .section__container {
+  /* permitimos el layout por defecto (grid) en lugar de forzar flex */
+  display: block;
+}
+
+#projects .content {
+  /* quitar el max-width que limitaba a 800px en otras secciones */
+  max-width: none;
+  width: 100%;
+  text-align: center;
+}
+
+/* Aseguramos que, en desktop, el grid de proyectos tenga un max-width y esté centrado */
+@media (min-width: 992px) {
+  #projects .section__container {
+    display: block;
+  }
+
+  #projects .content-list {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(340px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px; /* ancho máximo del área de proyectos */
+    margin-left: auto;
+    margin-right: auto; /* centrado real */
+    grid-auto-rows: 1fr;
+  }
+
+  /* Nos aseguramos de que las tarjetas llenen la celda para igualar alturas */
+  #projects .content-list .project-card {
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+  }
+}
